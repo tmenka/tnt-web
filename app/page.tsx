@@ -24,10 +24,10 @@ export default function Homepage() {
   return (
     <div className="h-screen w-screen">
       <div className="flex justify-center items-center text-center">
-        <h1 className="text-green-500 text-3xl">TONKO PEDER</h1>
+        <h1 className="text-green-500 text-3xl">TEXT 1</h1>
       </div>
       <div>
-        <p className="text-blue-500 text-5xl">Livaja ima malog pisu</p>
+        <p className="text-blue-500 text-5xl">TEXT 2</p>
       </div>
       <div>
         <label htmlFor="numberInput_X">Enter a number for X:</label>
