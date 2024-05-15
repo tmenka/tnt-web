@@ -2,18 +2,17 @@
 
 import { useState } from "react";
 
-export default function Homepage() {
-  const [x, setX] = useState<number>(0); // Set initial value for x
-  const [y, setY] = useState<number>(0); // Set initial value for y
+export default function Homepage()
+{
+  const [x, setX] = useState<number>(0);
+  const [y, setY] = useState<number>(0);
   const [result, setResult] = useState<number | null>(null);
 
   const handleChangeX = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Update x state with the parsed integer value of the input
     setX(parseInt(event.target.value));
   };
 
   const handleChangeY = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Update y state with the parsed integer value of the input
     setY(parseInt(event.target.value));
   };
 
@@ -22,12 +21,12 @@ export default function Homepage() {
   }
 
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-auto">
       <div className="flex justify-center items-center text-center">
         <h1 className="text-green-500 text-3xl">TEXT 1</h1>
       </div>
       <div>
-        <p className="text-blue-500 text-5xl">TEXT 2</p>
+        <p className="text-blue-500 text-2xl">TEXT 2</p>
       </div>
       <div>
         <label htmlFor="numberInput_X">Enter a number for X:</label>
