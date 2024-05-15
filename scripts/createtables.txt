@@ -1,0 +1,49 @@
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+); 
+
+CREATE TABLE USER (
+	User_id int,
+	Ime varchar(14),
+	Prezime varchar(25),
+	Username varchar(16),
+	Password varchar(32),
+	Role_id int
+);
+
+
+CREATE TABLE ROLES (
+	Role_id int,
+	Role_name varchar(14),
+);
+
+
+CREATE TABLE USER_REZ (
+	User_rez_id int,
+	User_id int,
+	Rezervacija_id int,
+);
+
+
+CREATE TABLE REZERVACIJA (
+	Rezervacija_id int,
+	Ime varchar(14),
+	Prezime varchar(25),
+	Email varchar(16),
+	Broj_mobitela varchar(32),
+	Godine int,
+	Alergeni varchar(256),
+	Napomena nvarcha,
+	Status int,
+	Termin_id int
+);
+
+
+CREATE TABLE TERMIN (
+	Termin_id int,
+	Datum ?,
+	Start varchar(10),
+	Stop varchar(10)
+);
