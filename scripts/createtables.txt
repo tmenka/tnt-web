@@ -1,49 +1,42 @@
-CREATE TABLE table_name (
-    column1 datatype,
-    column2 datatype,
-    column3 datatype,
-); 
-
-CREATE TABLE USER (
-	User_id int,
-	Ime varchar(14),
-	Prezime varchar(25),
-	Username varchar(16),
-	Password varchar(32),
+CREATE TABLE USERS(
+	Users_id int GENERATED ALWAYS AS IDENTITY,
+	Firstname varchar(40) NOT NULL,
+	Lastname varchar(40) NOT NULL,
+	Username varchar(100) NOT NULL,
+	Password varchar(100) NOT NULL,
 	Role_id int
-);
+)
 
 
 CREATE TABLE ROLES (
-	Role_id int,
-	Role_name varchar(14),
-);
+	Role_id int GENERATED ALWAYS AS IDENTITY,
+	Role_name varchar(40) NOT NULL
+)
 
 
-CREATE TABLE USER_REZ (
-	User_rez_id int,
+CREATE TABLE USER_RESERVATION (
+	User_reservation_id int GENERATED ALWAYS AS IDENTITY,
 	User_id int,
-	Rezervacija_id int,
-);
+	Reservation_id int
+)
 
 
-CREATE TABLE REZERVACIJA (
-	Rezervacija_id int,
-	Ime varchar(14),
-	Prezime varchar(25),
-	Email varchar(16),
-	Broj_mobitela varchar(32),
-	Godine int,
-	Alergeni varchar(256),
-	Napomena nvarcha,
+CREATE TABLE RESERVATION(
+	Reservation_id int GENERATED ALWAYS AS IDENTITY,
+	Firstname varchar(100) NOT NULL,
+	Lastname varchar(100) NOT NULL,
+	Email varchar(100) NOT NULL,
+	Phone_number varchar(100) NOT NULL,
+	Date_of_birth date NOT NULL,
+	Allergies varchar (256),
+	Comment varchar,
 	Status int,
-	Termin_id int
-);
+	Appointment_id int
+)
 
 
-CREATE TABLE TERMIN (
-	Termin_id int,
-	Datum ?,
-	Start varchar(10),
-	Stop varchar(10)
-);
+CREATE TABLE APPOINTMENT (
+	Appointment_id int GENERATED ALWAYS AS IDENTITY,
+	Start_date_time timestamp NOT NULL,
+	End_date_time timestamp NOT NULL
+)

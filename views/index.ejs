@@ -1,0 +1,23 @@
+<html><head>
+    <script src="/scripts/tailwindcss-with-all-plugins.js"></script>
+    <title> Tnt Web </title>
+    <!-- <link href="/styles.css" rel="stylesheet"> -->
+  </head><body>
+    <div>
+        <span><a href="/kontakt">kontakt</a></span>
+    </div>
+  <div class="container">
+        <h2> Users
+        </h2>
+        <h2> Added Task </h2>
+
+        <% for( var i = 0; i < users.length; i++){ %>
+            <span>
+                <%= users[i].firstname %>
+            </span>
+            <span>
+                <%= users[i].lastname %>
+            </span>
+        <% } %>
+</div></body>
+</html>
