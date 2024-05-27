@@ -1,0 +1,16 @@
+.header-navbar {
+    display: flex;
+    background: #66aec5;
+    justify-content: right;
+}
+
+.header-navbar-item {
+    margin-right: 20px;
+    color:#fcd504;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.header-navbar-item:hover {
+    color:yellow;
+}

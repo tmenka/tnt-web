@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="/styles/users.css">
+        <title> Tnt Web </title>
+    <!-- <link href="/styles.css" rel="stylesheet"> -->
+    </head>
+    <body>
+    <div class="layout">  
+    <!--HEARDER DODAVANJE-->
+        <header><%- include('../partials/header'); %></header>
+
+        <div class="content">
+            <h2> Users </h2>
+            <form action ="/users" method="POST">
+                <input type="text" name="firstname" placeholder="Ime"> 
+                <input type="text" name="lastname" placeholder="Prezime">      
+                <input type="text" name="username" placeholder="Korisnicko ime">     
+                <input type="text" name="password" placeholder="Lozinka">
+                <select name="role_id">
+                    <% for(var i = 0; i < roles.length; i++) { %>
+                      <option value="<%= roles[i].role_id %>">
+                         <%= roles[i].role_name %>
+                     </option>
+                    <% } %>
+                </select>    
+                <button> Add Task </button>
+            </form>
+
+            <div style="display: flex; flex-direction: column;">
+                <% for( var i = 0; i < users.length; i++){ %>
+                    <span>
+                        <%= users[i].firstname %>
+                    </span>
+                    <span>
+                        <%= users[i].lastname %>
+                    </span>
+                    <form action ="/users/delete" method="POST">
+                        <input type="hidden" type="number" name="users_id" value="<%= users[i].users_id %>">
+                       <button> Remove </button>
+                    </form>
+                <% } %>
+            </div>
+          
+        </div>
+    <!--FOOTER DODAVANJE-->
+        <div> <footer><%- include('../partials/footer'); %></footer>
+        </div>
+    </div>
+</body>
+</html>
