@@ -2,15 +2,17 @@
     display: flex;
     background: #66aec5;
     justify-content: right;
+    z-index: 100;
 }
 
 .header-navbar-item {
     margin-right: 20px;
     color:#fcd504;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: black;
 }
 
 .header-navbar-item:hover {
-    color:yellow;
+    color: #B3CD78;
 }

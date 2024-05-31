@@ -1,6 +1,7 @@
 body{
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
+    font-size: 12px;
     font-weight: 400;
     font-style: normal;
 }
@@ -12,9 +13,72 @@ body{
 }
 
 .content {
+    padding-top:60px;
+    width: 910px;
     flex: 1;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tnt-footer {
+    margin-top: auto;
     flex: 0;
 }
+
+
+
+/*NASLOVI*/
+
+.naslov-1{
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/*POČETNA*/
+
+    /*DIV*/
+.ponuda {
+    width: 450px;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
+.ponuda-slika{
+    display: inline-block;
+    width: 160px;
+    margin-right: 10px;
+}
+
+.ponuda-info{
+    display: inline-block;
+    width: 240px;
+    vertical-align: top;
+}
+
+    /*CONTENT*/
+
+.img-ponuda{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.ponuda-naslov{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.ponuda-tekst{
+    margin-top: 20px;/*ne radi, zasto?*/
+    font-size: 10px;
+    color:rgb(128, 139, 152);
+    margin-top: 0px;
+    width: 100%;
+}
+
