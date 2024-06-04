@@ -1,18 +1,20 @@
 .header-navbar {
     display: flex;
-    background: #66aec5;
+    background: #0000003e;
     justify-content: right;
+    position: relative;
     z-index: 100;
+    padding: 7px;
 }
 
 .header-navbar-item {
     margin-right: 20px;
-    color:#fcd504;
-    font-size: 18px;
+    color:#ffffff;
+    font-size: 14px;
     font-weight: 400;
     text-shadow: black;
 }
 
 .header-navbar-item:hover {
-    color: #B3CD78;
+    color: rgb(252, 213, 4);
 }

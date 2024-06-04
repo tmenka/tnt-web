@@ -1,9 +1,12 @@
 body{
+    background-color: rgb(242, 249, 255);
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-size: 12px;
     font-weight: 400;
     font-style: normal;
+    background-image: url("../images/pozadina-v2.svg");
+    
 }
 
 .layout {
@@ -13,7 +16,8 @@ body{
 }
 
 .content {
-    padding-top:60px;
+    padding-top:100px;
+    padding-bottom:200px;
     width: 910px;
     flex: 1;
     margin-left: auto;
@@ -27,13 +31,22 @@ body{
 
 
 
-/*NASLOVI*/
+/*NASLOVI i TEKST*/
+
+.pocetna-tekst1{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 150px;
+}
 
 .naslov-1{
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
+    color: rgb(102, 174, 197);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.702);
 }
 
 /*POČETNA*/
@@ -45,12 +58,12 @@ body{
     vertical-align: top;
     padding-left: 15px;
     padding-right: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .ponuda-slika{
     display: inline-block;
-    width: 160px;
+    width: 140px;
     margin-right: 10px;
 }
 
@@ -82,3 +95,78 @@ body{
     width: 100%;
 }
 
+
+/*KONTAKT*/
+
+.google-map {
+    height: 380;
+    width: 430;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 4%;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.426);
+    display: inline-block;
+}
+
+.google-map iframe {
+    
+    height: 380;
+    width: 430;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.kontakt-info{
+    display: inline-block;
+    width: 280px;
+    vertical-align: top;
+    margin-left: 180px;
+    padding-top: 100px;
+}
+
+.kontakt-des{
+    font-size: 14px;
+
+}
+
+
+/*TEAM*/
+
+.team{
+    padding-left: 257px;
+    height: 400px;
+}
+
+.team-slika{
+    margin-right: 40px;
+    width: 200px;
+    height: 227px;
+    display: inline-block;
+}
+
+
+.team-info{
+    background-color: rgba(102, 174, 197, 0.3);
+
+    margin-right: 40px;
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.team-img{
+    border-radius: 50%;
+}
+
+.team-ime{
+    font-size: 26px;
+    font-weight: 600px;
+    margin-bottom: 10px;
+}
+
+.team-ime{
+    font-size: 18px;
+}
