@@ -2,7 +2,7 @@
 .carousel{
     height: 80vh;
     margin-top: -200px;
-    width: 100vw;
+    width: auto;
     overflow: hidden;
     position: relative;
 
