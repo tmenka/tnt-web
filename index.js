@@ -74,6 +74,48 @@ app.post('/users/delete', async function (req, res) {
   res.redirect("/users");
  });
 
+
+//appointment
+
+app.get('/appointment', async function (req, res) {
+  let edit_app_id = req.query.edit_appointment_id ?? null;
+  const appointmentQuery = 'SELECT * FROM appointment';
+  const appointmentsDb = await pool.query(appointmentQuery);
+
+
+  await res.render('admin/appointment', { appointments: appointmentsDb.rows, edit_appointment_id: edit_app_id });
+  });
+
+ app.post('/appointment', async function (req, res) {
+  let appointment= req.body;
+ 
+  await pool.query(
+   'INSERT into appointment (start_date_time, end_date_time) VALUES($1, $2)', 
+   [appointment.start_date_time, appointment.end_date_time]);
+ 
+  res.redirect("/appointment");
+ });
+
+ app.post('/appointment/edit', async function (req, res) {
+  let appointment= req.body;
+ 
+  await pool.query(
+   'UPDATE appointment SET start_date_time = $1, end_date_time = $2 WHERE appointment_id = $3', 
+   [appointment.start_date_time, appointment.end_date_time, appointment.appointment_id]);
+ 
+  res.redirect("/appointment");
+ });
+ 
+ app.post('/appointment/delete', async function (req, res) {
+   let appointment= req.body;
+  
+   await pool.query(
+     'DELETE from appointment where appointment_id = $1', 
+     [appointment.appointment_id]);
+  
+   res.redirect("/appointment");
+  });
+
 //the server is listening on port 3000 for connections
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!') //node index.js
