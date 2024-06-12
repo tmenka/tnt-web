@@ -40,3 +40,10 @@ CREATE TABLE APPOINTMENT (
 	Start_date_time timestamp NOT NULL,
 	End_date_time timestamp NOT NULL
 )
+
+CREATE TABLE GALLERY_ITEMS (
+	Gallery_items_id int GENERATED ALWAYS AS IDENTITY,
+	Path varchar(500) NOT NULL,
+	Title varchar(100) NOT NULL
+
+)

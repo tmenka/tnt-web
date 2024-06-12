@@ -225,7 +225,7 @@ body{
     width: 100%;
   }
 
-  .flex-grid {
+  .flex-grid-p {
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -233,7 +233,7 @@ body{
     margin-bottom: 20px;
     
   }
-  .flex-grid .col {
+  .flex-grid-p .col {
 
     flex: 1;
     padding-top: 4px;

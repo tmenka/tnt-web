@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <%- include('partials/head'); %>
+        <link rel="stylesheet" href="/styles/users.css">
+        <title> Tnt Web </title>
+    <!-- <link href="/styles.css" rel="stylesheet"> -->
+    </head>
+    <body>
+    <div class="layout">  
+    <!--HEARDER DODAVANJE-->
+        <header><%- include('partials/header'); %></header>
+
+        <div class="content">
+
+            <div style="display: flex; flex-direction: column;">
+                <% for( var i = 0; i < gallery_items.length; i++){ %>
+                    
+                    <span>
+                        <%= gallery_items[i].title %>
+                    </span>
+                    <img alt="gallery image" src="<%= gallery_items[i].path %>"/>
+
+                <% } %>
+            </div>
+          
+        </div>
+    <!--FOOTER DODAVANJE-->
+        <div> <footer><%- include('partials/footer'); %></footer>
+        </div>
+    </div>
+</body>
+</html>
