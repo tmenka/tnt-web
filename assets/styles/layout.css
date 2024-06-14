@@ -26,6 +26,21 @@ body{
     flex: 0;
 }
 
+button{
+    background-color: rgba(179, 205, 120);
+    transition-duration: 0.2s;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.button:hover{
+    border: 2px solid rgba(179, 205, 120);
+    background-color: white;
+    color: black;
+}
+
 
 
 /*NASLOVI i TEKST*/
@@ -255,3 +270,56 @@ body{
     text-align: right;
     font-size: 16px;
   }
+
+
+  /* FORMA */
+
+
+  .form-button{
+    background-color: rgba(102, 174, 197);
+    padding: 15px 35px;
+    
+    border-radius: 4px;
+    color: black;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+
+  .form-button:hover{
+    color: black;
+    background-color: white;
+    border: 4px solid rgba(102, 174, 197);
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgb(252, 213, 4);
+
+  }
+
+  .form-wrap{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+  .grid-container {
+    display: grid;
+    background-color: rgb(252, 213, 4);
+    padding: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    grid-template-areas: auto auto;
+  }
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+    .item0 { grid-column: 1 / span 2; 
+    }
+    .item8 { grid-column: 1 / span 2; 
+    }
+

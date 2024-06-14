@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <%- include('partials/head'); %>
+        <title> Tnt Web </title>
+    </head>
+    <body>
+    <div class="layout">  
+        <header><%- include('partials/header'); %></header>
+
+        <div class="content">
+        
+
+
+            <div class="from-wrap">
+
+            
+                
+
+                    <form action ="/reservation" method="POST">
+                        
+                        <div class="grid-container">
+
+                            <div class="item0"> 
+                                
+                                <label for="termin">Izaberite slobodni termin:</label>
+                                <select name="appointment_id">
+                                    <% for( var i = 0; i < appointments.length; i++){ %>
+                                        <option value="<%= appointments[i].appointment_id %>">
+                                            <%= i+1 %> - POČETAK: <%= appointments[i].start_date_time %> KRAJ: <%= appointments[i].end_date_time %>
+                                        </option>
+                                    <% } %>
+                                </select> </div>
+
+
+
+                            <div class="item1">
+                                <label>Unesite ime:</label>
+                                <input name="firstname" type="text" placeholder="Ime">
+                            </div>
+                            <div class="item2">
+                                <label>Unesite prezime:</label>
+                                <input name="lastname" type="text" placeholder="Prezime">
+                            </div>
+                            <div class="item3">
+                                <label>Unesite email:</label>
+                                <input name="email" type="email" placeholder="email">
+                            </div>
+                            <div class="item4">
+                                <label>Unesite broj mobitela:</label>
+                                <input name="phone_number" type="tel" placeholder="0951234567" minlength="9" maxlength="10">
+                            </div>
+                            <div class="item5">
+                                <label>Unesite datum rođenja djeteta:</label>
+                                <input name="date_of_birth" type="date"></div>
+                            <div class="item6">
+                                <label>Alergenti
+        
+                                </label>
+                                <textarea name="allergies" rows="4" cols="50"></textarea>
+                            </div>
+                            <div class="item7">
+                                <label>
+                                    Napomena
+                                </label>
+                                <textarea name="comment" rows="4" cols="50">
+                                </textarea>
+                            </div>
+                            <div class="item8"><button> Potvrdi unos </button></div>
+
+                        </div>
+                    </form>
+
+    
+    
+            </div>
+
+        </div>
+        <div class="tnt-footer"> 
+            <footer><%- include('partials/footer'); %></footer>
+        </div>
+    </div>
+</body>
+</html>

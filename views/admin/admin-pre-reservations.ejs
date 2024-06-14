@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="/styles/users.css">
+        <title> Tnt Web </title>
+    <!-- <link href="/styles.css" rel="stylesheet"> -->
+    </head>
+    <body>
+    <div class="layout">  
+    <!--HEARDER DODAVANJE-->
+        <header><%- include('../partials/header'); %></header>
+
+        <a href="/admin/reservation"> REZERVACIJE </a>
+
+
+        <div class="content">
+
+
+
+
+            <h2> Pre-Reservations </h2>
+
+
+            <div style="display: flex; flex-direction: column;">
+                <% for( var i = 0; i < pre_reservations.length; i++){ %>
+                    <span>
+                        <%= pre_reservations[i].firstname %>
+                    </span>
+                    <span>
+                        <%= pre_reservations[i].lastname %>
+                    </span>
+                    <span>
+                        <%= pre_reservations[i].email %>
+                    </span>
+                    <span>
+                        <%= pre_reservations[i].phone_number %>
+                    </span>
+                    <span>
+                        <%= pre_reservations[i].date_of_birth%>
+                    </span>
+                    <span>
+                        <%= pre_reservations[i].allergies %>
+                    </span>
+                    <span>
+                        <%= pre_reservations[i].comment %>
+                    </span>
+                    <span>
+                        <%= pre_reservations[i].start_date_time %> - <%= pre_reservations[i].end_date_time %>
+                    </span>
+                    <span>
+                        <%= pre_reservations[i].status %>
+                    </span>
+                    <form action ="/pre-reservations/change-status" method="POST">
+                        <input type="hidden" type="number" name="reservation_id" value="<%= pre_reservations[i].reservation_id%>">
+                       <button> REZERVIRAJ </button>
+                    </form>
+                    <span>
+                        <a href="/admin/reservation/<%= pre_reservations[i].reservation_id %>">Edit</a>
+                    </span>
+                    
+                    <form action ="/pre-reservations/delete" method="POST">
+                        <input type="hidden" type="number" name="reservation_id" value="<%= pre_reservations[i].reservation_id%>">
+                       <button> Remove </button>
+                    </form>
+
+                <% } %>
+            </div>
+          
+        </div>
+    <!--FOOTER DODAVANJE-->
+        <div> <footer><%- include('../partials/footer'); %></footer>
+        </div>
+    </div>
+</body>
+</html>
