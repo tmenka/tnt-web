@@ -8,14 +8,14 @@
     <body>
     <div class="layout">  
 
-        <header><%- include('../partials/header-employee'); %></header>
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
 
         <div class="content">
             <p class="rez-title"> Appointments </p>
             <div class="appo-wraper">
                 <div class="appo-content">
                     <% if(!edit_appointment_id){ %>  
-                        <form action ="/appointment" method="POST">
+                        <form action ="/admin/appointment" method="POST">
                             <input 
                                 type="datetime-local" 
                                 name="start_date_time" 
@@ -46,7 +46,7 @@
                             </span>
                         <% } %>
                         <% if(edit_appointment_id == appointments[i].appointment_id){ %>   
-                            <form action ="/appointment/edit" method="POST">
+                            <form action ="/admin/appointment/edit" method="POST">
                                 <input 
                                     type="datetime-local" 
                                     name="start_date_time" 
@@ -66,7 +66,7 @@
                         <% if(!edit_appointment_id){ %>  
                             <a href="?edit_appointment_id=<%= appointments[i].appointment_id %>" class="link-edit-a">Edit</a>
                         <% } %>
-                        <form action ="/appointment/delete" method="POST">
+                        <form action ="/admin/appointment/delete" method="POST">
                             <input type="hidden" type="number" name="appointment_id" value="<%= appointments[i].appointment_id %>">
                         <button class="btn-remove-a"> Remove </button>
                         </form>

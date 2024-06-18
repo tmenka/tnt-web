@@ -8,7 +8,7 @@
     <body>
     <div class="layout">  
         
-        <header><%- include('../partials/header-employee'); %></header>
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
 
 
         <a href="/admin/pre-reservation" class="link-button"> PRED-REZERVACIJE </a>
@@ -50,7 +50,7 @@
                         </span>
     
     
-                        <form action ="/reservations/change-status" method="POST" style="margin-bottom: 25px;">
+                        <form action ="/admin/reservations/change-status" method="POST" style="margin-bottom: 25px;">
                             <input type="hidden" type="number" name="reservation_id" value="<%= reservations[i].reservation_id%>">
                            <button class="btn-rez"> UKLONI REZERVACIJU </button>
                         </form>
@@ -59,7 +59,7 @@
                             <a href="/admin/reservation/<%= reservations[i].reservation_id %>" class="link-edit">Edit</a>
                         </span>
                         
-                        <form action ="/reservations/delete" method="POST">
+                        <form action ="/admin/reservations/delete" method="POST">
                             <input type="hidden" type="number" name="reservation_id" value="<%= reservations[i].reservation_id%>">
                            <button class="btn-remove"> Remove </button>
                         </form>

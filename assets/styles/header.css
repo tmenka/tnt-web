@@ -18,3 +18,40 @@
 .header-navbar-item:hover {
     color: rgb(252, 213, 4);
 }
+
+#errorMessage {
+    background-color: #b10a0a;
+    color: #aca7a7;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    height: 80px;
+    width: 100%;
+    z-index: 999;
+    padding-top: 20px;
+    opacity: 0;
+    transition: width .75s ease;
+    opacity: 1;
+}
+
+#errorMessage {
+    background-color: #b10a0a;
+    color: #aca7a7;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    height: 80px;
+    width: 100%;
+    z-index: 999;
+    padding-top: 20px;
+    animation: cssAnimation 3s forwards;
+}
+
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 0.5;}
+    100% {opacity: 0; display: none;}
+}
+
