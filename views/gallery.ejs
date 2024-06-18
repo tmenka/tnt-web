@@ -1,7 +1,6 @@
 <html>
     <head>
         <%- include('partials/head'); %>
-        <link rel="stylesheet" href="/styles/users.css">
         <title> Tnt Web </title>
     <!-- <link href="/styles.css" rel="stylesheet"> -->
     </head>
@@ -12,17 +11,19 @@
 
         <div class="content">
 
-            <div style="display: flex; flex-direction: column;">
-                <% for( var i = 0; i < gallery_items.length; i++){ %>
-                    
-                    <span>
-                        <%= gallery_items[i].title %>
-                    </span>
-                    <img alt="gallery image" src="<%= gallery_items[i].path %>"/>
+            <p class="rez-title"> GALERIJA </p>
 
-                <% } %>
-            </div>
-          
+                    <% for( var i = 0; i < gallery_items.length; i++){ %>
+                        <div class="responsive">
+                            <div class="gallery">
+                                <div class="desc">
+                                    <%= gallery_items[i].title %>
+                                </div>
+                                <img alt="gallery image" src="<%= gallery_items[i].path %>" width="600" height="400"  style="margin-bottom: 20px;"/>
+                            </div>
+                        </div>
+                    <% } %>
+
         </div>
     <!--FOOTER DODAVANJE-->
         <div> <footer><%- include('partials/footer'); %></footer>

@@ -8,73 +8,75 @@
     <body>
     <div class="layout">  
 
-        <header><%- include('../partials/header'); %></header>
+        <header><%- include('../partials/header-employee'); %></header>
 
         <div class="content">
-            <h2> Appointments </h2>
-            <% if(!edit_appointment_id){ %>  
-                <form action ="/appointment" method="POST">
-                    <input 
-                        type="datetime-local" 
-                        name="start_date_time" 
-                        placeholder="Pocetak"
-                        min="2024-01-01-T00:00"
-                        required> 
-                    <input 
-                        type="datetime-local" 
-                        name="end_date_time" 
-                        placeholder="Kraj"
-                        min="2024-01-01-T00:00"
-                        required>
-        
-                    <button class="button"> Dodaj termin </button>
-                </form>
-            <% } %>
-            
-
-            <div style="display: flex; flex-direction: column;">
-                <% for( var i = 0; i < appointments.length; i++){ %>
-                    <% if(edit_appointment_id != appointments[i].appointment_id){ %>   
-                        <span>
-                            <%= appointments[i].start_date_time %>
-                        </span>
-                        <span>
-                            <%= appointments[i].end_date_time %>
-                        </span>
-                    <% } %>
-                    <% if(edit_appointment_id == appointments[i].appointment_id){ %>   
-                        <form action ="/appointment/edit" method="POST">
+            <p class="rez-title"> Appointments </p>
+            <div class="appo-wraper">
+                <div class="appo-content">
+                    <% if(!edit_appointment_id){ %>  
+                        <form action ="/appointment" method="POST">
                             <input 
                                 type="datetime-local" 
                                 name="start_date_time" 
+                                placeholder="Pocetak"
                                 min="2024-01-01-T00:00"
-                                value="<%= appointments[i].start_date_time.toISOString().split('.')[0] %>"> 
+                                required> 
                             <input 
                                 type="datetime-local" 
-                                name="end_date_time"
+                                name="end_date_time" 
+                                placeholder="Kraj"
                                 min="2024-01-01-T00:00"
-                                value="<%= appointments[i].end_date_time.toISOString().split('.')[0] %>">
-                       
-                                <input type="hidden" type="number" name="appointment_id" value="<%= appointments[i].appointment_id %>">
-                                <button> Save  </button>
+                                required>
+                
+                            <button class="button"> Dodaj termin </button>
                         </form>
-                        <a href="?">Cancel</a>
                     <% } %>
-                    <% if(!edit_appointment_id){ %>  
-                        <a href="?edit_appointment_id=<%= appointments[i].appointment_id %>">Edit</a>
+            
+
+ 
+
+                    <% for( var i = 0; i < appointments.length; i++){ %>
+                        <% if(edit_appointment_id != appointments[i].appointment_id){ %>   
+                            <span>
+                                <%= appointments[i].start_date_time %>
+                            </span>
+                            <span>
+                                <%= appointments[i].end_date_time %>
+                            </span>
+                        <% } %>
+                        <% if(edit_appointment_id == appointments[i].appointment_id){ %>   
+                            <form action ="/appointment/edit" method="POST">
+                                <input 
+                                    type="datetime-local" 
+                                    name="start_date_time" 
+                                    min="2024-01-01-T00:00"
+                                    value="<%= appointments[i].start_date_time.toISOString().split('.')[0] %>"> 
+                                <input 
+                                    type="datetime-local" 
+                                    name="end_date_time"
+                                    min="2024-01-01-T00:00"
+                                    value="<%= appointments[i].end_date_time.toISOString().split('.')[0] %>">
+                        
+                                    <input type="hidden" type="number" name="appointment_id" value="<%= appointments[i].appointment_id %>">
+                                    <button> Save  </button>
+                            </form>
+                            <a href="?">Cancel</a>
+                        <% } %>
+                        <% if(!edit_appointment_id){ %>  
+                            <a href="?edit_appointment_id=<%= appointments[i].appointment_id %>" class="link-edit-a">Edit</a>
+                        <% } %>
+                        <form action ="/appointment/delete" method="POST">
+                            <input type="hidden" type="number" name="appointment_id" value="<%= appointments[i].appointment_id %>">
+                        <button class="btn-remove-a"> Remove </button>
+                        </form>
                     <% } %>
-                    <form action ="/appointment/delete" method="POST">
-                        <input type="hidden" type="number" name="appointment_id" value="<%= appointments[i].appointment_id %>">
-                    <button> Remove </button>
-                    </form>
-                <% } %>
+                </div>
             </div>
           
         </div>
 
     </div>
-    <div> 
-        <footer><%- include('../partials/footer'); %></footer>
-    </div>
+
 </body>
 </html>

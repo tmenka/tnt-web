@@ -63,7 +63,6 @@ button{
 
 /*POČETNA*/
 
-    /*DIV*/
 .ponuda {
     width: 450px;
     display: inline-block;
@@ -323,3 +322,122 @@ button{
     .item8 { grid-column: 1 / span 2; 
     }
 
+
+    /* GALLERY */
+
+    .img-g{
+        width: 100%;
+
+    }
+
+
+    /* REZERVACIJE */
+
+    .rez-wraper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rez-content{
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .rez-title{
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .link-button{
+        font-size: 18px; 
+        background-color: rgb(144, 66, 216);
+        color:white;
+        padding: 14px 25px;
+        text-decoration: none;
+        text-align: center;
+        width: 250px;
+    }
+
+    .link-button:hover{
+        background-color: blueviolet;
+    }
+
+    .link-button:active{
+        background-color: rgb(121, 12, 223);
+    }
+
+    .btn-remove{
+        background: red;
+        padding: 15px;
+        border-radius: 20px;
+        margin-left: 50px;
+        margin-bottom: 40px;
+        color: white;
+    }
+
+    .link-edit{
+        background: blue;
+        padding: 15px;
+        border-radius: 20px;
+        margin-left: 50px;
+        margin-bottom: 40px;
+        
+
+    }
+
+    .btn-rez{
+        background: yellow;
+        padding: 15px;
+        border-radius: 20px;
+        margin-left: 50px;
+        margin-top: 40px;
+        margin-bottom: 5px;
+    }
+
+    span{
+        margin-bottom: 30px;
+
+    }
+
+
+    /* APPOINTMENT */
+
+
+    .btn-remove-a{
+        background: red;
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: 50px;
+        margin-bottom: 40px;
+        color: white;
+    }
+
+    .link-edit-a{
+        background: blue;
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: 50px;
+        margin-bottom: 40px;
+        color: white;
+        width: 50px;
+        
+    }
+
+    .appo-wraper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .appo-content{
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }

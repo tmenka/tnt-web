@@ -8,28 +8,28 @@
     <body>
     <div class="layout">  
     <!--HEARDER DODAVANJE-->
-        <header><%- include('../partials/header'); %></header>
+        <header><%- include('../partials/header-employee'); %></header>
 
         <div class="content">
-            <h2> Users </h2>
-            <form action ="/admin/gallery" method="POST" enctype="multipart/form-data">
+            <p class="rez-title"> GALERIJA </p>
+            <form action ="/admin/gallery" method="POST" enctype="multipart/form-data" style=" margin-top: 10px; margin-bottom: 10px;">
                 <input type="text" name="title" placeholder="Naziv slike" required> 
                 <input type="file" name="image" placeholder="Dodaj sliku" required>      
                 
                 <button> Add Image </button>
             </form>
 
-            <div style="display: grid; grid-template-columns: auto auto auto;">
+            <div style="display: grid; grid-template-columns: auto auto auto; margin-top: 20px;">
                 <% for( var i = 0; i < gallery_items.length; i++){ %>
                     <div>
                     <span>
                         <%= gallery_items[i].title %>
                     </span>
-                    <img style="width: 400px; height: 400px;" alt="gallery image" src="<%= gallery_items[i].path %>"/>
+                    <img style="width: 500px; height: 300px; margin-right: 5px;" alt="gallery image" src="<%= gallery_items[i].path %>"/>
 
                     <form action ="/admin/gallery/delete" method="POST">
                         <input type="hidden" type="number" name="image_id" value="<%= gallery_items[i].gallery_items_id %>">
-                       <button> Remove </button>
+                       <button style="margin-bottom: 20px;"> Remove </button>
                     </form>
                 </div>
                 <% } %>
