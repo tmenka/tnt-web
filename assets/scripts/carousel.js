@@ -1,5 +1,4 @@
 //step 1: get DOM
-console.log("app-js")
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('prev');
 
@@ -14,7 +13,6 @@ let timeRunning = 1000;
 let timeAutoNext = 5000;
 
 nextDom.onclick = function(){
-    console.log(1111111)
     showSlider('next');
 }
 
@@ -27,7 +25,6 @@ let runNextAuto = setTimeout(() => {
     next.click();
 }, timeAutoNext)
 function showSlider(type){
-    console.log("show slider")
     let  SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
     let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
     

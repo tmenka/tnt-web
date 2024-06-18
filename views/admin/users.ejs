@@ -8,11 +8,11 @@
     <body>
     <div class="layout">  
     <!--HEARDER DODAVANJE-->
-        <header><%- include('../partials/header-admin'); %></header>
+        <header><%- include('../partials/header-admin',  { errorMessage: errorMessage }); %></header>
 
         <div class="content">
             <h2> Users </h2>
-            <form action ="/users" method="POST">
+            <form action ="/admin/users" method="POST">
                 <input type="text" name="firstname" placeholder="Ime"> 
                 <input type="text" name="lastname" placeholder="Prezime">      
                 <input type="text" name="username" placeholder="Korisnicko ime">     
@@ -35,7 +35,7 @@
                     <span>
                         <%= users[i].lastname %>
                     </span>
-                    <form action ="/users/delete" method="POST">
+                    <form action ="/admin/users/delete" method="POST">
                         <input type="hidden" type="number" name="users_id" value="<%= users[i].users_id %>">
                        <button> Remove </button>
                     </form>

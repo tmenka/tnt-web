@@ -3,8 +3,4 @@ INSERT INTO roles (Role_name) VALUES ('Admin'), ('Employee')
 
 INSERT INTO users (Firstname, Lastname, Username, Password, Role_id)
 VALUES
-('Test_admin_name', 'Test_admin_lastname', 'admin', 'admin', 1),
-('Test_employee_name', 'Test_employee_lastname', 'employee', 'employee', 2),
-('Test_admin2_name', 'Test_admin2_lastname', 'admin2', 'admin2', 1),
-('Test_employee2_name', 'Test_employee2_lastname', 'employee2', 'employee2', 2),
-('Test_employee3_name', 'Test_employee3_lastname', 'employee3', 'employee3', 2)
+('default_admin', 'default_admin', 'admin', '$2b$10$NmokLa8Kc0lYvH77pWaG/ukFZ5E0bG0zEQuodnI/YBeSE/GrQBOuu', 1)

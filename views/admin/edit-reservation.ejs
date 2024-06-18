@@ -5,7 +5,7 @@
     </head>
     <body>
     <div class="layout">  
-        <header><%- include('../partials/header-employee'); %></header>
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
 
         <div class="content">
         
@@ -13,10 +13,7 @@
 
             <div class="from-wrap">
 
-            
-                
-
-                    <form action ="/admin/reservation/<%= reservation.reservation_id %>" method="POST">
+                <form action ="/admin/reservation/<%= reservation.reservation_id %>" method="POST">
                         
                         <div class="grid-container">
 
