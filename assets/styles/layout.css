@@ -63,28 +63,6 @@ button{
 
 /*POČETNA*/
 
-.ponuda {
-    width: 450px;
-    display: inline-block;
-    vertical-align: top;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 40px;
-}
-
-.ponuda-slika{
-    display: inline-block;
-    width: 140px;
-    margin-right: 10px;
-}
-
-.ponuda-info{
-    display: inline-block;
-    width: 240px;
-    vertical-align: top;
-}
-
-    /*CONTENT*/
 
 .img-ponuda{
     width: 100%;
@@ -338,7 +316,7 @@ button{
         flex-direction: column;
     }
 
-    .rez-content{
+    .rez-item{
         display: flex;
         flex-direction: column;
         font-size: 16px;
@@ -347,8 +325,18 @@ button{
         margin-right: auto;
     }
 
+    .rez-content{
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        margin-top: 60px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .rez-title{
-        font-size: 22px;
+        font-size: 30px;
         text-align: center;
         margin-bottom: 60px;
     }
@@ -356,48 +344,40 @@ button{
     .link-button{
         font-size: 18px; 
         background-color: rgb(144, 66, 216);
+        border-radius: 5px;
         color:white;
         padding: 14px 25px;
-        text-decoration: none;
         text-align: center;
-        width: 250px;
+        width: 240px;
+        margin: 20px 0px 0px 40px;
     }
 
     .link-button:hover{
-        background-color: blueviolet;
+        background-color: rgb(122, 14, 224);
+        transition-duration: 0.5s;
     }
 
     .link-button:active{
         background-color: rgb(121, 12, 223);
     }
 
-    .btn-remove{
-        background: red;
-        padding: 15px;
-        border-radius: 20px;
-        margin-left: 50px;
-        margin-bottom: 40px;
-        color: white;
-    }
+
 
     .link-edit{
-        background: blue;
-        padding: 15px;
-        border-radius: 20px;
-        margin-left: 50px;
-        margin-bottom: 40px;
+        background: rgb(39, 88, 205);
+        padding: 5px 10px 5px 10px;
+        font-size: 16;
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+
+    .link-edit:hover{
+        background: rgb(19, 53, 131);
         
-
+        transition-duration: 0.5s;
     }
 
-    .btn-rez{
-        background: yellow;
-        padding: 15px;
-        border-radius: 20px;
-        margin-left: 50px;
-        margin-top: 40px;
-        margin-bottom: 5px;
-    }
+
 
     span{
         margin-bottom: 30px;
@@ -408,24 +388,20 @@ button{
     /* APPOINTMENT */
 
 
-    .btn-remove-a{
-        background: red;
-        padding: 10px;
+    .link-edit-a{
+        background: rgb(39, 88, 205);
+        padding: 5px 10px 5px 10px;
+        font-size: 16px;
         border-radius: 5px;
-        margin-left: 50px;
         margin-bottom: 40px;
         color: white;
+        width: 50px; 
     }
 
-    .link-edit-a{
-        background: blue;
-        padding: 10px;
-        border-radius: 5px;
-        margin-left: 50px;
-        margin-bottom: 40px;
-        color: white;
-        width: 50px;
+    .link-edit-a:hover{
+        background: rgb(19, 53, 131);
         
+        transition-duration: 0.5s;
     }
 
     .appo-wraper{
@@ -440,4 +416,143 @@ button{
 
         margin-left: auto;
         margin-right: auto;
+    }
+
+
+    /* LOGIN */
+
+    .login-wraper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-content{
+        flex: 1;
+        font-size: 16px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .login-content p{
+        margin-bottom: 20px;
+    }
+
+    .login-btn{
+        width: 200px; 
+        padding: 5px 5px 5px 5px;
+
+    }
+
+
+    /* USER */
+    
+    .user-bnt{
+        background-color: yellowgreen;
+        padding: 5px 10px 5px 10px;
+        font-size: 20;
+        margin-left: 20px;
+    }
+
+    .user-wraper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user-content{
+        flex: 1;
+        font-size: 16px;
+
+        margin-top:60px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .user-content p{
+        margin-bottom: 20px;
+    
+    }
+
+
+
+    /* OPCENITO */
+
+
+    .btn-add{
+        background-color: yellowgreen;
+        padding: 5px 10px 5px 10px;
+        font-size: 16px;
+        margin-left: 20px;
+    }
+
+    .btn-add:hover{
+        background-color: rgb(167, 249, 3);
+        transition-duration: 0.5s;
+    }
+
+    .btn-add-l{
+        background-color: yellowgreen;
+        padding: 5px 10px 5px 10px;
+        font-size: 22px;
+        margin-left: 20px;
+    }
+
+    .btn-add-l:hover{
+        background-color: rgb(167, 249, 3);
+        transition-duration: 0.5s;
+    }
+
+    .btn-rmv{
+        background-color: rgb(237, 28, 36);
+        padding: 5px 10px 5px 10px;
+        font-size: 16;
+        margin-bottom: 40px;
+        color: white;
+    }
+
+    .btn-rmv:hover{
+        background-color: rgb(161, 20, 24);
+        transition-duration: 0.5s;
+    }
+
+    .btn-edit{
+        background-color: rgb(105, 28, 237);
+        padding: 5px 10px 5px 10px;
+        font-size: 16;
+        margin-bottom: 40px;
+        color: white;
+    }
+
+    .btn-edit:hover{
+        background-color: rgb(69, 19, 154);
+        transition-duration: 0.5s;
+
+    }
+
+    .btn-cnl{
+        background-color: rgb(237, 195, 28);
+        padding: 5px 10px 5px 10px;
+        font-size: 16;
+        margin-bottom: 40px;
+        color: rgb(0, 0, 0);
+    }
+
+    .btn-cnl:hover{
+        background-color: rgb(171, 141, 22);
+        color: white;
+        transition-duration: 0.5s;
+    }
+
+    .btn-rez{
+        background-color: rgb(28, 237, 167);
+        padding: 5px 10px 5px 10px;
+        font-size: 16;
+        margin-bottom: 40px;
+        color: rgb(255, 255, 255);
+    }
+
+    .btn-rez:hover{
+        background-color: rgb(13, 173, 120);
+
+        transition-duration: 0.5s;
     }

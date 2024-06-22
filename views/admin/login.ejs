@@ -11,19 +11,36 @@
         <header><%- include('../partials/errorToaster', {errorMessage: errorMessage}); %></header>
 
         <div class="content">
-            <h2> Login </h2>
-            <form action ="/login" method="POST">
-                 <p>
-                    <label for="username">Korisnicko ime:</label>
-                    <input type="text" name="username" id="username">
-                </p>
-                <p>
-                    <label for="password">Zaporka:</label>
-                    <input type="text" name="password" id="password">
-                </p>   
+            <p class="rez-title"> Login </p>
+            <div class="login-wraper">
+                <form action ="/login" method="POST">
+                    <div class="login-wraper">
+                        
+                            <div class="login-content">
+                                <p><label for="username">Korisnicko ime:</label></p>
+                                <p><input type="text" name="username" id="username"></p>
+
+                            </div>
+
+                            <div class="login-content">
+                                <p><label for="password">Zaporka:</label></p>
+                                <p><input type="text" name="password" id="password"></p>
                                 
-                 <input type="submit" value="Login">
-            </form>
+
+                            </div>
+
+                            <div class="login-content">
+                                <input type="submit" value="Login" class="login-btn">
+                            </div>
+
+                            
+                                            
+
+                        
+
+                    </div>
+                </form>
+            </div>
           
         </div>
     <!--FOOTER DODAVANJE-->

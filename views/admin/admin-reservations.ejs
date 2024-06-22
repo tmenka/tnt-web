@@ -16,52 +16,55 @@
 
 
         <div class="content">
+            
             <p class="rez-title"> Reservations </p>
 
             <div class="rez-wraper">
-                <div class="rez-content">
+                <div class="rez-item">
                     <% for( var i = 0; i < reservations.length; i++){ %>
-                        <span>
-                            IME: <%= reservations[i].firstname %>
-                        </span>
-                        <span>
-                            PREZIME: <%= reservations[i].lastname %>
-                        </span>
-                        <span>
-                            EMAIL: <%= reservations[i].email %>
-                        </span>
-                        <span>
-                            BROJ MOBITELA: <%= reservations[i].phone_number %>
-                        </span>
-                        <span>
-                            DATUM ROĐENJA: <%= reservations[i].date_of_birth%>
-                        </span>
-                        <span>
-                            ALERGIJE: <%= reservations[i].allergies %>
-                        </span>
-                        <span>
-                            NAPOMENA: <%= reservations[i].comment %>
-                        </span>
-                        <span>
-                            TEMRIN: <%= reservations[i].start_date_time %> - <%= reservations[i].end_date_time %>
-                        </span>
-                        <span>
-                            STATUS: <%= reservations[i].status %>
-                        </span>
+                        <div class="rez-content">
+                            <span>
+                                IME: <%= reservations[i].firstname %>
+                            </span>
+                            <span>
+                                PREZIME: <%= reservations[i].lastname %>
+                            </span>
+                            <span>
+                                EMAIL: <%= reservations[i].email %>
+                            </span>
+                            <span>
+                                BROJ MOBITELA: <%= reservations[i].phone_number %>
+                            </span>
+                            <span>
+                                DATUM ROĐENJA: <%= reservations[i].date_of_birth%>
+                            </span>
+                            <span>
+                                ALERGIJE: <%= reservations[i].allergies %>
+                            </span>
+                            <span>
+                                NAPOMENA: <%= reservations[i].comment %>
+                            </span>
+                            <span>
+                                TEMRIN: <%= reservations[i].start_date_time %> - <%= reservations[i].end_date_time %>
+                            </span>
+                            <span>
+                                STATUS: <%= reservations[i].status %>
+                            </span>
+                        </div>
     
     
-                        <form action ="/admin/reservations/change-status" method="POST" style="margin-bottom: 25px;">
+                        <form action ="/admin/reservations/change-status" method="POST">
                             <input type="hidden" type="number" name="reservation_id" value="<%= reservations[i].reservation_id%>">
-                           <button class="btn-rez"> UKLONI REZERVACIJU </button>
+                           <button class="btn-cnl"> UKLONI REZERVACIJU </button>
                         </form>
     
-                        <span>
+                        <p style="margin-bottom: 40px;">
                             <a href="/admin/reservation/<%= reservations[i].reservation_id %>" class="link-edit">Edit</a>
-                        </span>
+                        </p>
                         
                         <form action ="/admin/reservations/delete" method="POST">
                             <input type="hidden" type="number" name="reservation_id" value="<%= reservations[i].reservation_id%>">
-                           <button class="btn-remove"> Remove </button>
+                           <button class="btn-rmv"> Remove </button>
                         </form>
                     <% } %>
                 </div>

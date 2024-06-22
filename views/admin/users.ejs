@@ -10,8 +10,8 @@
     <!--HEARDER DODAVANJE-->
         <header><%- include('../partials/header-admin',  { errorMessage: errorMessage }); %></header>
 
-        <div class="content">
-            <h2> Users </h2>
+        <div class="login-wraper">
+            <p class="rez-title"> Users </p>
             <form action ="/admin/users" method="POST">
                 <input type="text" name="firstname" placeholder="Ime"> 
                 <input type="text" name="lastname" placeholder="Prezime">      
@@ -24,20 +24,23 @@
                      </option>
                     <% } %>
                 </select>    
-                <button> Add Task </button>
+                <button class="btn-add"> Dodaj korisnika </button>
             </form>
 
-            <div style="display: flex; flex-direction: column;">
+            <div class="user-content">
                 <% for( var i = 0; i < users.length; i++){ %>
-                    <span>
-                        <%= users[i].firstname %>
-                    </span>
-                    <span>
-                        <%= users[i].lastname %>
-                    </span>
+                    <p>
+                        Ime: <%= users[i].firstname %>
+                    </p>
+                    <p>
+                        Prezime: <%= users[i].lastname %>
+                    </p>
+                    <p>
+                        Rola: ?
+                    </p>
                     <form action ="/admin/users/delete" method="POST">
                         <input type="hidden" type="number" name="users_id" value="<%= users[i].users_id %>">
-                       <button> Remove </button>
+                       <button class="btn-rmv"> Remove </button>
                     </form>
                 <% } %>
             </div>

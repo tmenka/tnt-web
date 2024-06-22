@@ -15,7 +15,7 @@
             <div class="appo-wraper">
                 <div class="appo-content">
                     <% if(!edit_appointment_id){ %>  
-                        <form action ="/admin/appointment" method="POST">
+                        <form action ="/admin/appointment" method="POST" style="margin-bottom: 60px;">
                             <input 
                                 type="datetime-local" 
                                 name="start_date_time" 
@@ -29,7 +29,7 @@
                                 min="2024-01-01-T00:00"
                                 required>
                 
-                            <button class="button"> Dodaj termin </button>
+                            <button class="btn-add"> Dodaj termin </button>
                         </form>
                     <% } %>
             
@@ -59,16 +59,16 @@
                                     value="<%= appointments[i].end_date_time.toISOString().split('.')[0] %>">
                         
                                     <input type="hidden" type="number" name="appointment_id" value="<%= appointments[i].appointment_id %>">
-                                    <button> Save  </button>
+                                    <button class="btn-add"> Save  </button>
                             </form>
-                            <a href="?">Cancel</a>
+                            <a href="?" style="margin-bottom: 40px; margin-top: 10px; font-size: 18px; font-weight: 600;">Cancel</a>
                         <% } %>
                         <% if(!edit_appointment_id){ %>  
                             <a href="?edit_appointment_id=<%= appointments[i].appointment_id %>" class="link-edit-a">Edit</a>
                         <% } %>
                         <form action ="/admin/appointment/delete" method="POST">
                             <input type="hidden" type="number" name="appointment_id" value="<%= appointments[i].appointment_id %>">
-                        <button class="btn-remove-a"> Remove </button>
+                        <button class="btn-rmv"> Remove </button>
                         </form>
                     <% } %>
                 </div>

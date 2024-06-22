@@ -14,9 +14,9 @@
             <p class="rez-title"> GALERIJA </p>
             <form action ="/admin/gallery" method="POST" enctype="multipart/form-data" style=" margin-top: 10px; margin-bottom: 10px;">
                 <input type="text" name="title" placeholder="Naziv slike" required> 
-                <input type="file" name="image" placeholder="Dodaj sliku" required>      
+                <input type="file" name="image" placeholder="Dodaj sliku" required>        
                 
-                <button> Add Image </button>
+                <button class="btn-rez"> Dodaj sliku </button>
             </form>
 
             <div style="display: grid; grid-template-columns: auto auto auto; margin-top: 20px;">
@@ -29,7 +29,7 @@
 
                     <form action ="/admin/gallery/delete" method="POST">
                         <input type="hidden" type="number" name="image_id" value="<%= gallery_items[i].gallery_items_id %>">
-                       <button style="margin-bottom: 20px;"> Remove </button>
+                       <button class="btn-rmv" style="margin-top: 10px;"> Delete </button>
                     </form>
                 </div>
                 <% } %>

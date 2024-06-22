@@ -5,8 +5,7 @@
     <!-- <link href="/styles.css" rel="stylesheet"> -->
     </head>
     <body>
-    <div class="layout">  
-    <!--HEARDER DODAVANJE-->
+    <div class="layout">
         <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
 
         <a href="/admin/reservation" class="link-button"> REZERVACIJE </a>
@@ -17,46 +16,49 @@
             <p class="rez-title"> Pre-Reservations </p>
 
             <div class="rez-wraper">
-                <div class="rez-content">
+                <div class="rez-item">
                     <% for( var i = 0; i < pre_reservations.length; i++){ %>
-                        <span>
-                            IME: <%= pre_reservations[i].firstname %>
-                        </span>
-                        <span>
-                            PREZIME <%= pre_reservations[i].lastname %>
-                        </span>
-                        <span>
-                            EMAIL: <%= pre_reservations[i].email %>
-                        </span>
-                        <span>
-                            BROJ MOBITELA: <%= pre_reservations[i].phone_number %>
-                        </span>
-                        <span>
-                            DATUM ROĐENJA DJETETA: <%= pre_reservations[i].date_of_birth%>
-                        </span>
-                        <span>
-                            ALERGIJE: <%= pre_reservations[i].allergies %>
-                        </span>
-                        <span>
-                            NAPOMENA: <%= pre_reservations[i].comment %>
-                        </span>
-                        <span>
-                            TERMIN: <%= pre_reservations[i].start_date_time %> - <%= pre_reservations[i].end_date_time %>
-                        </span>
-                        <span>
-                            STATUS: <%= pre_reservations[i].status %>
-                        </span>
-                        <form action ="/admin/pre-reservations/change-status" method="POST" style="margin-bottom: 25px;">
+                        <div class="rez-content">
+                            <span>
+                                IME: <%= pre_reservations[i].firstname %>
+                            </span>
+                            <span>
+                                PREZIME <%= pre_reservations[i].lastname %>
+                            </span>
+                            <span>
+                                EMAIL: <%= pre_reservations[i].email %>
+                            </span>
+                            <span>
+                                BROJ MOBITELA: <%= pre_reservations[i].phone_number %>
+                            </span>
+                            <span>
+                                DATUM ROĐENJA DJETETA: <%= pre_reservations[i].date_of_birth%>
+                            </span>
+                            <span>
+                                ALERGIJE: <%= pre_reservations[i].allergies %>
+                            </span>
+                            <span>
+                                NAPOMENA: <%= pre_reservations[i].comment %>
+                            </span>
+                            <span>
+                                TERMIN: <%= pre_reservations[i].start_date_time %> - <%= pre_reservations[i].end_date_time %>
+                            </span>
+                            <span>
+                                STATUS: <%= pre_reservations[i].status %>
+                            </span>
+                        </div>
+
+                        <form action ="/admin/pre-reservations/change-status" method="POST">
                             <input type="hidden" type="number" name="reservation_id" value="<%= pre_reservations[i].reservation_id%>">
                         <button class="btn-rez"> REZERVIRAJ </button>
                         </form>
-                        <span>
+                        <p style="margin-bottom: 40px;">
                             <a href="/admin/reservation/<%= pre_reservations[i].reservation_id %>" class="link-edit">Edit</a>
-                        </span>
+                        </p>
                         
                         <form action ="/admin/pre-reservations/delete" method="POST">
                             <input type="hidden" type="number" name="reservation_id" value="<%= pre_reservations[i].reservation_id%>">
-                        <button class="btn-remove"> Remove </button>
+                        <button class="btn-rmv"> Remove </button>
                         </form>
 
                     <% } %>
@@ -64,7 +66,6 @@
             </div>
           
         </div>
-    <!--FOOTER DODAVANJE-->
         <div> <footer><%- include('../partials/footer'); %></footer>
         </div>
     </div>
