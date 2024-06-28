@@ -5,7 +5,7 @@
     </head>
     <body>
     <div class="layout">  
-        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }, { isAdmin: isAdmin }); %></header>
 
         <div class="content">
         
@@ -30,10 +30,11 @@
                                         <% if(reservation.appointment_id != appointments[i].appointment_id){ %>   
                                             <option value="<%= appointments[i].appointment_id %>">
                                                 <%= i+1 %> - POČETAK: <%= appointments[i].start_date_time %> KRAJ: <%= appointments[i].end_date_time %>
-                                            </option>                                        <% } %>
-
+                                            </option>                                   
+                                        <% } %>
                                     <% } %>
-                                </select> </div>
+                                </select> 
+                            </div>
 
 
 

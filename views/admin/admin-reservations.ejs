@@ -8,7 +8,7 @@
     <body>
     <div class="layout">  
         
-        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }, { isAdmin: isAdmin }); %></header>
 
 
         <a href="/admin/pre-reservation" class="link-button"> PRED-REZERVACIJE </a>
@@ -17,7 +17,7 @@
 
         <div class="content">
             
-            <p class="rez-title"> Reservations </p>
+            <p class="naslov-1"> Reservations </p>
 
             <div class="rez-wraper">
                 <div class="rez-item">
@@ -55,11 +55,11 @@
     
                         <form action ="/admin/reservations/change-status" method="POST">
                             <input type="hidden" type="number" name="reservation_id" value="<%= reservations[i].reservation_id%>">
-                           <button class="btn-cnl"> UKLONI REZERVACIJU </button>
+                           <button class="btn-rez" style="font-size: 16px;"> UKLONI REZERVACIJU </button>
                         </form>
     
                         <p style="margin-bottom: 40px;">
-                            <a href="/admin/reservation/<%= reservations[i].reservation_id %>" class="link-edit">Edit</a>
+                            <a href="/admin/reservation/<%= reservations[i].reservation_id %>" class="link-edit-a">Edit</a>
                         </p>
                         
                         <form action ="/admin/reservations/delete" method="POST">

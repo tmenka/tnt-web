@@ -1,6 +1,11 @@
 <header><%- include('errorToaster', { errorMessage: errorMessage }); %></header>
 <div class="header-navbar">
 
+    <% if(isAdmin){ %>  
+        <a class="header-navbar-item" href="/admin/users">Korisnici</a>
+    <% } %>
+
+    <a class="header-navbar-item" href="/admin/profile">Moj profil</a>
     <a class="header-navbar-item" href="/admin/appointment">Termini</a>
     <a class="header-navbar-item" href="/admin/reservation">Rezervacije</a>
     <a class="header-navbar-item" href="/admin/pre-reservation">Predrezervacije</a>

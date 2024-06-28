@@ -8,10 +8,10 @@
     <body>
     <div class="layout">  
 
-        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }, { isAdmin: isAdmin }); %></header>
 
         <div class="content">
-            <p class="rez-title"> Appointments </p>
+            <p class="naslov-1"> Appointments </p>
             <div class="appo-wraper">
                 <div class="appo-content">
                     <% if(!edit_appointment_id){ %>  
@@ -32,8 +32,6 @@
                             <button class="btn-add"> Dodaj termin </button>
                         </form>
                     <% } %>
-            
-
  
 
                     <% for( var i = 0; i < appointments.length; i++){ %>
@@ -74,6 +72,9 @@
                 </div>
             </div>
           
+        </div>
+
+        <div> <footer><%- include('../partials/footer'); %></footer>
         </div>
 
     </div>

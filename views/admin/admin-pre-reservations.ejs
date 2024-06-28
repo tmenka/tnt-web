@@ -6,14 +6,14 @@
     </head>
     <body>
     <div class="layout">
-        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }, { isAdmin: isAdmin }); %></header>
 
         <a href="/admin/reservation" class="link-button"> REZERVACIJE </a>
 
 
         <div class="content">
 
-            <p class="rez-title"> Pre-Reservations </p>
+            <p class="naslov-1"> Pre-Reservations </p>
 
             <div class="rez-wraper">
                 <div class="rez-item">
@@ -50,10 +50,10 @@
 
                         <form action ="/admin/pre-reservations/change-status" method="POST">
                             <input type="hidden" type="number" name="reservation_id" value="<%= pre_reservations[i].reservation_id%>">
-                        <button class="btn-rez"> REZERVIRAJ </button>
+                        <button class="btn-rez" style="font-size: 16px;"> REZERVIRAJ </button>
                         </form>
                         <p style="margin-bottom: 40px;">
-                            <a href="/admin/reservation/<%= pre_reservations[i].reservation_id %>" class="link-edit">Edit</a>
+                            <a href="/admin/reservation/<%= pre_reservations[i].reservation_id %>" class="link-edit-a">Edit</a>
                         </p>
                         
                         <form action ="/admin/pre-reservations/delete" method="POST">

@@ -11,7 +11,9 @@
         <header><%- include('../partials/errorToaster', {errorMessage: errorMessage}); %></header>
 
         <div class="content">
-            <p class="rez-title"> Login </p>
+
+            <p class="naslov-1" style="padding-top: 60px;"> Login </p>
+
             <div class="login-wraper">
                 <form action ="/login" method="POST">
                     <div class="login-wraper">
@@ -24,13 +26,13 @@
 
                             <div class="login-content">
                                 <p><label for="password">Zaporka:</label></p>
-                                <p><input type="text" name="password" id="password"></p>
+                                <p><input type="password" name="password" id="password"></p>
                                 
 
                             </div>
 
                             <div class="login-content">
-                                <input type="submit" value="Login" class="login-btn">
+                                <button class="button btn-login"> Login  </button>
                             </div>
 
                             
@@ -43,7 +45,6 @@
             </div>
           
         </div>
-    <!--FOOTER DODAVANJE-->
         <div> <footer><%- include('../partials/footer'); %></footer>
         </div>
     </div>

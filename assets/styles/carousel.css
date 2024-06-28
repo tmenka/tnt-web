@@ -36,7 +36,7 @@
 
 .carousel .list .item .title,
 .carousel .list .item .topic{
-    font-size: 60px;
+    font-size: 57px;
     font-weight: 600;
     line-height: 1.3em;
 }
@@ -123,6 +123,7 @@
     animation-delay: 1s!important;
 }
 .carousel .list .item:nth-child(1) .content .des{
+    font-size: 16px;
     animation-delay: 1.2s!important;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.702);
 }

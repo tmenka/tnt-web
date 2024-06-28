@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="/styles/users.css">
+        <title> Tnt Web </title>
+    <!-- <link href="/styles.css" rel="stylesheet"> -->
+    </head>
+    <body>
+    <div class="layout">  
+    <!--HEARDER DODAVANJE-->
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
+
+
+        <div class="content">
+            <p class="naslov-1"> Profil </p>
+    
+            <div class="user-wraper">
+                <div class="user-content"> 
+                    <form action ="/admin/profile" method="POST">
+                        <input 
+                            type="text"
+                            name="firstname" 
+                            value="<%= user.firstname %>">
+
+                        <input 
+                            type="text"
+                            name="lastname" 
+                            value="<%= user.lastname %>">
+
+                        <input 
+                            type="text"
+                            name="username" 
+                            value="<%= user.username %>">
+
+                        <input 
+                            type="password"
+                            name="password" 
+                            value=""> 
+
+                        <button class="button btn-add"> Save  </button>
+                        <a href="/admin" class="button btn-cnl">Cancel</a>
+                    </form>
+                </div>
+            </div>
+          
+        </div>
+        <div> <footer><%- include('../partials/footer'); %></footer></div>
+    </div>
+</body>
+</html>

@@ -8,10 +8,10 @@
     <body>
     <div class="layout">  
     <!--HEARDER DODAVANJE-->
-        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }, { isAdmin: isAdmin }); %></header>
 
         <div class="content">
-            <p class="rez-title"> GALERIJA </p>
+            <p class="naslov-1"> GALERIJA </p>
             <form action ="/admin/gallery" method="POST" enctype="multipart/form-data" style=" margin-top: 10px; margin-bottom: 10px;">
                 <input type="text" name="title" placeholder="Naziv slike" required> 
                 <input type="file" name="image" placeholder="Dodaj sliku" required>        

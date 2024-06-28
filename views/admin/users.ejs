@@ -8,46 +8,112 @@
     <body>
     <div class="layout">  
     <!--HEARDER DODAVANJE-->
-        <header><%- include('../partials/header-admin',  { errorMessage: errorMessage }); %></header>
+        <header><%- include('../partials/header-employee',  { errorMessage: errorMessage }); %></header>
 
-        <div class="login-wraper">
-            <p class="rez-title"> Users </p>
-            <form action ="/admin/users" method="POST">
-                <input type="text" name="firstname" placeholder="Ime"> 
-                <input type="text" name="lastname" placeholder="Prezime">      
-                <input type="text" name="username" placeholder="Korisnicko ime">     
-                <input type="text" name="password" placeholder="Lozinka">
-                <select name="role_id">
-                    <% for(var i = 0; i < roles.length; i++) { %>
-                      <option value="<%= roles[i].role_id %>">
-                         <%= roles[i].role_name %>
-                     </option>
+    <div class="content">
+            <p class="naslov-1"> Users </p>
+
+            <div class="user-wraper">
+                <div class="user-content">
+                    <% if(!edit_user_id) { %>  
+                        <form action ="/admin/users" method="POST">
+                            <input type="text" name="firstname" placeholder="Ime"> 
+                            <input type="text" name="lastname" placeholder="Prezime">      
+                            <input type="text" name="username" placeholder="Korisnicko ime">     
+                            <input type="text" name="password" placeholder="Lozinka">
+                            <select name="role_id">
+                                <% for(var i = 0; i < roles.length; i++) { %>
+                                <option value="<%= roles[i].role_id %>">
+                                    <%= roles[i].role_name %>
+                                </option>
+                                <% } %>
+                            </select>    
+                            <button class="btn-add"> Dodaj korisnika </button>
+                        </form>
+                        <% } %>
+                </div>
+    
+    
+    
+                <div class="user-content">
+                    <% for( var i = 0; i < users.length; i++) { %>
+                        <% if(edit_user_id != users[i].users_id) { %>
+                            <p>
+                                Ime: <%= users[i].firstname %>
+                            </p>
+                            <p>
+                                Prezime: <%= users[i].lastname %>
+                            </p>
+                            <p>
+                                Username: <%= users[i].username %>
+                            </p>
+                            <p>
+                                Password: ****
+                            </p>
+                            <p>
+                                Rola: <%= roles.find(r => r.role_id == users[i].role_id).role_name %>
+                            </p>
+                        <% } %>
+
+                        <% if(edit_user_id == users[i].users_id) { %>
+                            <form action ="/admin/users/edit" method="POST">
+                                <input 
+                                    type="text"
+                                    name="firstname" 
+                                    value="<%= users[i].firstname %>">
+
+                                <input 
+                                    type="text"
+                                    name="lastname" 
+                                    value="<%= users[i].lastname %>">
+
+                                <input 
+                                    type="text"
+                                    name="username" 
+                                    value="<%= users[i].username %>">
+
+                                <input 
+                                    type="password"
+                                    name="password" 
+                                    value=""> 
+
+                            <select name="role_id">
+                                <% for( var j =  0; j < roles.length; j++){ %>
+                                    <% if(roles[j].role_id == users[i].role_id){ %>   
+                                        <option value="<%= roles[j].role_id %>" selected>
+                                                <%= roles[j].role_name %>
+                                        </option>
+                                    <% } %>
+                                    <% if(roles[j].role_id != users[i].role_id){ %>   
+                                        <option value="<%= roles[j].role_id %>" >
+                                            <%= roles[j].role_name %>
+                                    </option>                                     
+                                    <% } %>
+
+                                <% } %>
+                            </select>
+
+                            <input type="hidden" type="number" name="user_id" value="<%= users[i].users_id %>">
+                            <button class="btn-add"> Save  </button>
+                        </form>
+                        <a href="?" style="margin-bottom: 40px; margin-top: 10px; font-size: 18px; font-weight: 600;">Cancel</a>
                     <% } %>
-                </select>    
-                <button class="btn-add"> Dodaj korisnika </button>
-            </form>
-
-            <div class="user-content">
-                <% for( var i = 0; i < users.length; i++){ %>
-                    <p>
-                        Ime: <%= users[i].firstname %>
-                    </p>
-                    <p>
-                        Prezime: <%= users[i].lastname %>
-                    </p>
-                    <p>
-                        Rola: ?
-                    </p>
+                    <% if(!edit_user_id) { %>  
+                        <a href="?edit_user_id=<%= users[i].users_id %>" class="link-edit-a">Edit</a>
+                    <% } %>
                     <form action ="/admin/users/delete" method="POST">
                         <input type="hidden" type="number" name="users_id" value="<%= users[i].users_id %>">
-                       <button class="btn-rmv"> Remove </button>
+                    <button class="btn-rmv"> Remove </button>
                     </form>
-                <% } %>
+                        
+                    <% } %>
+                </div>
             </div>
-          
         </div>
-    <!--FOOTER DODAVANJE-->
-        <div> <footer><%- include('../partials/footer'); %></footer>
+        
+
+        <div> 
+            <footer><%- include('../partials/footer'); %></footer>
         </div>
     </div>
 </body>
